@@ -88,6 +88,7 @@ function resolveAll (links, cb) {
 }
 
 readFile(path.join(cwd, 'feeds'), function (file) {
+  if (!file) return
   resolveAll(file.toString().trim().split('\n'), function (err, feeds) {
     if (err) return
 
